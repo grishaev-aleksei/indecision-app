@@ -8,47 +8,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CounterExampleComponentState = function (_React$Component) {
-    _inherits(CounterExampleComponentState, _React$Component);
+var BuildItVisibleComponentState = function (_React$Component) {
+    _inherits(BuildItVisibleComponentState, _React$Component);
 
-    function CounterExampleComponentState(props) {
-        _classCallCheck(this, CounterExampleComponentState);
+    function BuildItVisibleComponentState(props) {
+        _classCallCheck(this, BuildItVisibleComponentState);
 
-        var _this = _possibleConstructorReturn(this, (CounterExampleComponentState.__proto__ || Object.getPrototypeOf(CounterExampleComponentState)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (BuildItVisibleComponentState.__proto__ || Object.getPrototypeOf(BuildItVisibleComponentState)).call(this, props));
 
-        _this.handleAddOne = _this.handleAddOne.bind(_this);
-        _this.handleMinusOne = _this.handleMinusOne.bind(_this);
-        _this.handleReset = _this.handleReset.bind(_this);
+        _this.handleToggleVisibility = _this.handleToggleVisibility.bind(_this);
         _this.state = {
-            count: 0
+            toggle: false
         };
         return _this;
     }
 
-    _createClass(CounterExampleComponentState, [{
-        key: 'handleAddOne',
-        value: function handleAddOne() {
+    _createClass(BuildItVisibleComponentState, [{
+        key: 'handleToggleVisibility',
+        value: function handleToggleVisibility() {
             this.setState(function (prevState) {
                 return {
-                    count: prevState.count + 1
-                };
-            });
-        }
-    }, {
-        key: 'handleMinusOne',
-        value: function handleMinusOne() {
-            this.setState(function (prevState) {
-                return {
-                    count: prevState.count - 1
-                };
-            });
-        }
-    }, {
-        key: 'handleReset',
-        value: function handleReset() {
-            this.setState(function () {
-                return {
-                    count: 0
+                    toggle: !prevState.toggle
                 };
             });
         }
@@ -61,29 +41,27 @@ var CounterExampleComponentState = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'Count: ',
-                    this.state.count
+                    'Visibility toggle'
                 ),
                 React.createElement(
                     'button',
-                    { onClick: this.handleAddOne },
-                    '+1'
+                    { onClick: this.handleToggleVisibility },
+                    !this.state.toggle ? 'Show Details' : 'Hide Details'
                 ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleMinusOne },
-                    '-1'
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleReset },
-                    'reset'
+                this.state.toggle && React.createElement(
+                    'div',
+                    null,
+                    React.createElement(
+                        'p',
+                        null,
+                        'Hey. These are some details you can now see!'
+                    )
                 )
             );
         }
     }]);
 
-    return CounterExampleComponentState;
+    return BuildItVisibleComponentState;
 }(React.Component);
 
-ReactDOM.render(React.createElement(CounterExampleComponentState, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(BuildItVisibleComponentState, null), document.getElementById('app'));

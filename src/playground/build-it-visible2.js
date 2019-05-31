@@ -13,7 +13,7 @@ const render = () => {
     const jsx = (
         <div>
             <h1>Visibility toggle</h1>
-            <button onClick={toggleVisibility}>{visibility ? 'Show Details' : 'HideDetails'}</button>
+            <button onClick={toggleVisibility}>{!visibility ? 'Show Details' : 'HideDetails'}</button>
             {visibility && (
                 <div>
                     <p>

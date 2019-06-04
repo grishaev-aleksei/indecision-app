@@ -5,7 +5,7 @@ class CounterExampleComponentState extends React.Component {
         this.handleMinusOne = this.handleMinusOne.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.state = {
-            count: 0
+            count: props.count
         }
     }
 
@@ -45,6 +45,10 @@ class CounterExampleComponentState extends React.Component {
     }
 
 }
+CounterExampleComponentState.defaultProps = {
+  count: 0
+};
 
 
-ReactDOM.render(<CounterExampleComponentState/>, document.getElementById('app'));
+
+ReactDOM.render(<CounterExampleComponentState count={9}/>, document.getElementById('app'));

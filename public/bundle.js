@@ -86,9 +86,61 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-console.log('digger!');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _person__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+// import './utils.js';
+
+
+// import {isAdult, canDrink} from "./person";
+//
+// console.log('digger!');
+// console.log(square(4));
+// console.log(add(5,15));
+// console.log(isAdult(18));
+// console.log(canDrink(18));
+
+
+console.log(Object(_utils__WEBPACK_IMPORTED_MODULE_0__["default"])(4,2));
+console.log(Object(_person__WEBPACK_IMPORTED_MODULE_1__["default"])(67));
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "square", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "add", function() { return add; });
+console.log('utils.js is running');
+
+const square = (x) => x * x;
+
+const add = (a, b) => a + b;
+
+/* harmony default export */ __webpack_exports__["default"] = ((a, b) => a - b);
+
+// export {subtract as default};
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isAdult", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canDrink", function() { return canDrink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return isSenior; });
+const isAdult = (age) => age >= 18;
+
+const canDrink = (age) => age >= 21;
+
+const isSenior = (age) => age >= 65;
+
+
 
 /***/ })
 /******/ ]);
